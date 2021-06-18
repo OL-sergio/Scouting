@@ -1,12 +1,11 @@
 package ipca.am.scounting.main
 
-class ActivityDetailScout {
-       var activitiesID : Int? = null
-        var activitiesName : String? = null
-        var activitiesCity : String? = null
+import ipca.am.scounting.models.ScoutModel
 
-        var scouts : MutableList<ActivitiesModel> = ArrayList()
-        var activitiesAdapter : ActivitiesAdapter? = null
+class ActivityDetailScout {
+
+        var scouts : MutableList<ScoutModel> = ArrayList()
+        var scoutAdapter : ActivitiesAdapter? = null
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
