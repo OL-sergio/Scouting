@@ -50,9 +50,10 @@ class RegisterActivity : AppCompatActivity() {
 
             VolleyHelper.instance.createNewUser (
 
-                this@RegisterActivity, username, password,
+                this@RegisterActivity,
+                username, password,
                 email, birthdate,
-                nationality) {
+                nationality ) {
 
                 if (it) {
 

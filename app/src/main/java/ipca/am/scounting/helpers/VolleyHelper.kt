@@ -24,7 +24,7 @@ class VolleyHelper {
     fun createNewUser (context : Context, username : String, password : String, email : String,
                         birthdate : String, nationality : String, createUserEvent : ((Boolean) -> Unit)) {
 
-        GlobalScope.launch(Dispatchers.Default) {
+        GlobalScope.launch(Dispatchers.IO) {
 
             queue = Volley.newRequestQueue(context)
 
@@ -68,7 +68,7 @@ class VolleyHelper {
 
     fun userLogin (context : Context, username : String, password : String, loginEvent : ((Boolean) -> Unit)) {
 
-        GlobalScope.launch(Dispatchers.Default) {
+        GlobalScope.launch(Dispatchers.IO) {
 
             queue = Volley.newRequestQueue(context)
 
@@ -104,9 +104,9 @@ class VolleyHelper {
 
     //------------------ Activities -----------------------
 
-    fun getTournaments (context: Context, tournamentsEvent : ((JSONArray?) -> Unit)) {
+    fun getActivities (context: Context, ActivitiesEvent : ((JSONArray?) -> Unit)) {
 
-        GlobalScope.launch(Dispatchers.Default) {
+        GlobalScope.launch(Dispatchers.IO) {
 
             queue = Volley.newRequestQueue(context)
 
@@ -116,12 +116,12 @@ class VolleyHelper {
                 BASE_API + GET_ACTIVITIES,
                 Response.Listener {
 
-                    tournamentsEvent.invoke(JSONArray(it))
+                    ActivitiesEvent.invoke(JSONArray(it))
                 },
                 Response.ErrorListener {
 
                     Log.d("VolleyHelper", it.toString())
-                    tournamentsEvent.invoke(null)
+                    ActivitiesEvent.invoke(null)
                 }
             ) {
 
@@ -138,24 +138,24 @@ class VolleyHelper {
     }
 
 
-    fun getActivitiesByID (context: Context, tournamentID : Int, tournamentsEvent: ((JSONArray?) -> Unit)) {
+    fun getActivitiesByID (context: Context, ActivitiesID : Int, ActivitiesEvent: ((JSONArray?) -> Unit)) {
 
-        GlobalScope.launch(Dispatchers.Default) {
+        GlobalScope.launch(Dispatchers.IO) {
 
             queue = Volley.newRequestQueue(context)
 
             val stringRequest = object : StringRequest(
 
                 Method.GET,
-                BASE_API + GET_ACTIVITIES_ID + "/" + tournamentID,
+                BASE_API + GET_ACTIVITIES_ID + "/" + ActivitiesID,
                 Response.Listener {
 
-                    tournamentsEvent.invoke(JSONArray(it))
+                    ActivitiesEvent.invoke(JSONArray(it))
                 },
                 Response.ErrorListener {
 
                     Log.d("Volley Helper", it.toString())
-                    tournamentsEvent.invoke(null)
+                    ActivitiesEvent.invoke(null)
                 }
             ) {
 
@@ -221,7 +221,7 @@ class VolleyHelper {
 
     companion object{
 
-        const val  BASE_API = "192.168.1.86:3000"
+        const val  BASE_API = "http://192.168.1.86:3000"
 
         const val REGISTER = "/user/register"
         const val LOGIN = "/user/login"
@@ -235,7 +235,6 @@ class VolleyHelper {
 
         private var nInstance : VolleyHelper? = VolleyHelper()
         val instance : VolleyHelper
-
 
 
         @Synchronized get() {

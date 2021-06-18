@@ -14,31 +14,25 @@ import org.json.JSONObject
 
 class ActivitiesDetailActivity : AppCompatActivity() {
 
-    var activitiesID : Int? = null
-    var activitiesName : String? = null
-    var activitiesCity : String? = null
+
 
     var activities : MutableList<ActivitiesModel> = ArrayList()
-    var activitiesAdapter : ActivitiesAdapter? = null
+    private var activitiesAdapter : ActivitiesAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_activities_detail)
 
-        val bundle = intent.extras
-        bundle?.let {
 
-            activitiesID = it.getInt("Activities Id")
-            activitiesName = it.getString("Activities Name")
-            activitiesCity = it.getString("Activiteis City")
-        }
 
         activitiesAdapter = ActivitiesAdapter()
         listView_ActivitiesDetailActivity.adapter = activitiesAdapter
 
-        var activitiesName : String? = null
+        //var activitiesName : String? = null
 
-        VolleyHelper.instance.getActivitiesByID(this, activitiesID!!.toInt()) { response ->
+
+
+        VolleyHelper.instance.getActivities (this){ response ->
 
             response?.let {
 
@@ -46,7 +40,7 @@ class ActivitiesDetailActivity : AppCompatActivity() {
 
                     val activitiesJSON : JSONObject = it[index] as JSONObject
                     activities.add(ActivitiesModel.parseJSON(activitiesJSON))
-                    activitiesName = activities[index].activitiesName
+                    //
                 }
                 activitiesAdapter?.notifyDataSetChanged()
             }
