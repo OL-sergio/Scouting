@@ -105,8 +105,7 @@ class VolleyHelper {
 
     companion object{
 
-        const val  BASE_API = "192.168.1.86:3000"
-
+        const val  BASE_API = "http://192.168.1.86:3000"
         const val REGISTER = "/user/register"
         const val LOGIN = "/user/login"
 
