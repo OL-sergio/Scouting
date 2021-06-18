@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.CreateScout">
+
+    <TextView
+        android:id="@+id/txtView_newScout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Novo Scout"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtTex_RegisterName"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="Nome"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtView_newScout"
+        />
+    <EditText
+        android:id="@+id/edtTex_RegisterUsername"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="Username"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterName"
+        />
+
+    <EditText
+        android:id="@+id/edtTex_RegisterBirthdate"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="@string/birthdate"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterUsername"
+        />
+
+    <EditText
+        android:id="@+id/edtTex_RegisterEmail"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="Email"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterBirthdate"
+        />
+    <EditText
+        android:id="@+id/edtTex_RegisterPhone"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="Número de Telefone"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterEmail"
+        />
+
+    <EditText
+        android:id="@+id/edtTex_RegisterCountry"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="País"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterPhone"
+        />
+    <Button
+        android:id="@+id/btn_RegisterCreateScout"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:text="Criar Scout "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterCountry"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
