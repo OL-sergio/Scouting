@@ -41,7 +41,7 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="60dp"
-                android:hint="@string/nome_utlilizador"
+                android:hint="@string/nome"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
@@ -54,7 +54,7 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/password"
+                android:hint="@string/data_de_in_cio"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
@@ -67,7 +67,7 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="Email"
+                android:hint="@string/morada"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
@@ -93,7 +93,7 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/nationality"
+                android:hint="@string/pa_s"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
@@ -106,7 +106,7 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/nome_utlilizador"
+                android:hint="@string/email"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
@@ -119,7 +119,7 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/nome_utlilizador"
+                android:hint="@string/telefone"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
@@ -128,7 +128,7 @@
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesEmail" />
 
             <Button
-                android:id="@+id/btn_RegisterCreateUser"
+                android:id="@+id/btn_CreateNewActivities"
                 android:layout_width="270dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="60dp"
@@ -137,6 +137,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesPhone" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

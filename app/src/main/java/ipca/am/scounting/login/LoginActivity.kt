@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import ipca.am.scounting.R
 import ipca.am.scounting.helpers.VolleyHelper
-import ipca.am.scounting.main.ActivitiesActivity
+import ipca.am.scounting.main.ActivitiesDetailActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    val intent = Intent(this, ActivitiesActivity::class.java)
+                    val intent = Intent(this, ActivitiesDetailActivity::class.java)
                     intent.putExtra("Username", username.text.toString())
                     startActivity(intent)
                 }

@@ -23,4 +23,13 @@
     <string name="title_activity_activities">ActivitiesActivity</string>
     <string name="nome_actividade">Nome Actividade</string>
     <string name="nova_atividade">Nova Atividade</string>
+    <string name="data_de_in_cio">Data de início</string>
+    <string name="nome">Nome</string>
+    <string name="morada">Morada</string>
+    <string name="pa_s">País</string>
+    <string name="email">Email</string>
+    <string name="telefone">Telefone</string>
+    <string name="missing_information">Preencher todos campos</string>
+    <string name="activities_created">Nova atividade criada</string>
+    <string name="failed_to_create_activities">"Erro ao criar uma nova atividade "</string>
 </resources>

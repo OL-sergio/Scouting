@@ -1,16 +1,17 @@
 package ipca.am.scounting.helpers
 
-import android.app.DownloadManager
 import android.content.Context
 import android.util.Log
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.json.JSONArray
 import org.json.JSONObject
 
 class VolleyHelper {
@@ -101,7 +102,122 @@ class VolleyHelper {
         }
     }
 
+    //------------------ Activities -----------------------
 
+    fun getTournaments (context: Context, tournamentsEvent : ((JSONArray?) -> Unit)) {
+
+        GlobalScope.launch(Dispatchers.Default) {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_ACTIVITIES,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                    tournamentsEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
+    fun getActivitiesByID (context: Context, tournamentID : Int, tournamentsEvent: ((JSONArray?) -> Unit)) {
+
+        GlobalScope.launch(Dispatchers.Default) {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_ACTIVITIES_ID + "/" + tournamentID,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("Volley Helper", it.toString())
+                    tournamentsEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue?.add(stringRequest)
+        }
+    }
+
+    fun createNewActivities (
+        context: Context, idActivities: Int, activitiesName: String,
+        activitiesStartDate: String, activitiesAddress: String, activitiesCity: String,
+        activitiesCountry: String, activitiesEmail: String, activitiesPhone: String,
+        tournamentsEvent: ((Boolean) -> Unit)) {
+
+        GlobalScope.launch(Dispatchers.Default) {
+
+            queue = Volley.newRequestQueue(context)
+
+            val jsonObject = JSONObject()
+
+            jsonObject.put("idACTIVITIES", idActivities)
+            jsonObject.put("NAME", activitiesName)
+            jsonObject.put("START_DATE", activitiesStartDate)
+            jsonObject.put("ADDRESS", activitiesAddress)
+            jsonObject.put("CITY", activitiesCity)
+            jsonObject.put("COUNTRY", activitiesCountry)
+            jsonObject.put("EMAIL", activitiesEmail)
+            jsonObject.put("PHONE", activitiesPhone)
+
+            val jsonObjectRequest = object : JsonObjectRequest(
+
+                Method.POST,
+                BASE_API + POST_NEW_ACTIVITIES,
+                jsonObject,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
+                },
+                Response.ErrorListener {
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(jsonObjectRequest)
+        }
+    }
 
     companion object{
 
@@ -109,6 +225,11 @@ class VolleyHelper {
 
         const val REGISTER = "/user/register"
         const val LOGIN = "/user/login"
+        const val GET_ACTIVITIES = "/api/GETActivities"
+        const val GET_ACTIVITIES_ID = "/api/GETActivities:id"
+        const val POST_NEW_ACTIVITIES = "/api/POSTActivities"
+
+
 
         var token = ""
 
