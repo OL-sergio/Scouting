@@ -26,12 +26,23 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
+                android:id="@+id/txtView_ScoutName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nome Scout"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 />
             <TextView
+                android:id="@+id/txtView_ScoutBirthdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Birthdate"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                />
+            <TextView
+                android:id="@+id/txtView_ScoutPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -40,10 +51,20 @@
                 android:textColor="?android:attr/textColorSecondary"
                 />
             <TextView
+                android:id="@+id/txtView_ScoutEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Email"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                />
+            <TextView
+                android:id="@+id/txtView_ScoutCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Country"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
                 />
@@ -58,6 +79,7 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/txtView_ScoutUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -66,6 +88,7 @@
                 android:text="Username"
                 />
             <TextView
+                android:id="@+id/txtView_ScoutCreationDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

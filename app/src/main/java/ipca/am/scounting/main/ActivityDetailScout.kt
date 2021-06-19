@@ -46,22 +46,26 @@ class ActivityDetailScout : AppCompatActivity()  {
 
             override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-                val rowActivitiesDetail = layoutInflater.inflate(R.layout.activity_activities_row, parent, false)
+                val rowScoutDetail = layoutInflater.inflate(R.layout.activity_scouts_row, parent, false)
 
-                val activitiesName      = rowActivitiesDetail.findViewById<TextView>(R.id.txtView_ActivitiesName)
-                val activitiesStartDate = rowActivitiesDetail.findViewById<TextView>(R.id.txtView_ActivitiesDate)
-                val activitiesAddress   = rowActivitiesDetail.findViewById<TextView>(R.id.txtView_ActivitiesAddress)
-                val activitiesCity      = rowActivitiesDetail.findViewById<TextView>(R.id.txtView_ActivitiesCity)
-                val activitiesCountry   = rowActivitiesDetail.findViewById<TextView>(R.id.txtView_ActivitiesCountry)
+                val scoutName      = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutName)
+                val scoutBirthdate      = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutBirthdate)
+                val scoutPhone = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutPhone)
+                val scoutEmail   = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutEmail)
+                val scoutCountry   = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutCountry)
+                val scoutUsername      = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutUsername)
+                val scoutCreationDate   = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutCreationDate)
 
 
-                activitiesName.text         = scouts[position].activitiesName
-                activitiesStartDate.text    = scouts[position].activitiesStartDate.toString()
-                activitiesAddress.text      = scouts[position].activitiesAddress
-                activitiesCity.text         = scouts[position].activitiesCity
-                activitiesCountry.text      = scouts[position].activitiesCountry
+                scoutName.text         = scouts[position].name
+                scoutBirthdate.text         = scouts[position].birthdate.toString()
+                scoutPhone.text    = scouts[position].phone.toString()
+                scoutEmail.text      = scouts[position].email
+                scoutCountry.text      = scouts[position].country
+                scoutUsername.text         = scouts[position].username
+                scoutCreationDate.text      = scouts[position].creationDate.toString()
 
-                return rowActivitiesDetail
+                return rowScoutDetail
             }
 
 
