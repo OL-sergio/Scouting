@@ -136,6 +136,39 @@ fun getScouts(context: Context, ScoutsEvent : ((JSONArray?) -> Unit)) {
         queue!!.add(stringRequest)
     }
 }
+// GET STAFF -----------------------------------------------------------
+fun getStaff(context: Context, StaffEvent : ((JSONArray?) -> Unit)) {
+
+    GlobalScope.launch(Dispatchers.IO) {
+
+        queue = Volley.newRequestQueue(context)
+
+        val stringRequest = object : StringRequest(
+
+            Method.GET,
+            BASE_API + GET_STAFF,
+            Response.Listener {
+
+                StaffEvent.invoke(JSONArray(it))
+            },
+            Response.ErrorListener {
+
+                Log.d("VolleyHelper", it.toString())
+                StaffEvent.invoke(null)
+            }
+        ) {
+
+            override fun getHeaders(): MutableMap<String, String> {
+
+                val map : MutableMap<String, String> = mutableMapOf()
+                map.put("Content-Type", "application/json")
+                return map
+            }
+        }
+
+        queue!!.add(stringRequest)
+    }
+}
 // GET SCOUTS ID -------------------------------------------------------
 fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -> Unit)) {
 
@@ -180,6 +213,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
         const val LOGIN = "/user/login"
         const val GET_SCOUTS = "/api/GetScout"
         const val GET_SCOUTS_ID = "/api/getScoutID"
+        const val GET_STAFF = "/api/GetStaff"
 
 
 
