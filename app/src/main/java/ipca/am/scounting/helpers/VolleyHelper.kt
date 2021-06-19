@@ -104,7 +104,7 @@ class VolleyHelper {
         }
     }
 // GET SCOUTS----------------------------------------------------
-fun getScouts(context: Context, ActivitiesEvent : ((JSONArray?) -> Unit)) {
+fun getScouts(context: Context, ScoutsEvent : ((JSONArray?) -> Unit)) {
 
     GlobalScope.launch(Dispatchers.IO) {
 
@@ -113,15 +113,15 @@ fun getScouts(context: Context, ActivitiesEvent : ((JSONArray?) -> Unit)) {
         val stringRequest = object : StringRequest(
 
             Method.GET,
-            BASE_API + GET_Scouts,
+            BASE_API + GET_SCOUTS,
             Response.Listener {
 
-                ActivitiesEvent.invoke(JSONArray(it))
+                ScoutsEvent.invoke(JSONArray(it))
             },
             Response.ErrorListener {
 
                 Log.d("VolleyHelper", it.toString())
-                ActivitiesEvent.invoke(null)
+                ScoutsEvent.invoke(null)
             }
         ) {
 
@@ -136,6 +136,39 @@ fun getScouts(context: Context, ActivitiesEvent : ((JSONArray?) -> Unit)) {
         queue!!.add(stringRequest)
     }
 }
+// GET SCOUTS ID -------------------------------------------------------
+fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -> Unit)) {
+
+    GlobalScope.launch(Dispatchers.IO) {
+
+        queue = Volley.newRequestQueue(context)
+
+        val stringRequest = object : StringRequest(
+
+            Method.GET,
+            BASE_API + GET_SCOUTS_ID + "/" + ScoutsId,
+            Response.Listener {
+
+                ScoutsEvent.invoke(JSONArray(it))
+            },
+            Response.ErrorListener {
+
+                Log.d("Volley Helper", it.toString())
+                ScoutsEvent.invoke(null)
+            }
+        ) {
+
+            override fun getHeaders(): MutableMap<String, String> {
+
+                val map : MutableMap<String, String> = mutableMapOf()
+                map.put("Content-Type", "application/json")
+                return map
+            }
+        }
+
+        queue?.add(stringRequest)
+    }
+}
 
 //----------------------------------------------------------------------
 
@@ -146,6 +179,7 @@ fun getScouts(context: Context, ActivitiesEvent : ((JSONArray?) -> Unit)) {
         const val REGISTER = "/user/register"
         const val LOGIN = "/user/login"
         const val GET_SCOUTS = "/api/GetScout"
+        const val GET_SCOUTS_ID = "/api/getScoutID"
 
 
 
