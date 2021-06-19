@@ -1,6 +1,7 @@
 package ipca.am.scounting.helpers
 
 import android.app.DownloadManager
+import java.time.LocalDateTime
 import android.content.Context
 import android.util.Log
 import com.android.volley.Request
@@ -209,7 +210,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
     fun createNewScout (
         context: Context, idScout : Int, scoutName: String,
         scoutBirthdate: String, scoutEmail: String, scoutPhone: String,
-        scoutCountry: String, scoutUsername : String, scoutCreationDate : Date) {
+        scoutCountry: String, scoutUsername : String, scoutCreationDate : LocalDateTime) {
 
         GlobalScope.launch(Dispatchers.Default) {
 
