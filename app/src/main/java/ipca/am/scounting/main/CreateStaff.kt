@@ -30,11 +30,11 @@ class CreateStaff : AppCompatActivity() {
 
                 val intentResult = Intent()
 
-                val staffName = findViewById<EditText>(R.id.txtView_StaffName)
-                val staffBirthdate = findViewById<EditText>(R.id.txtView_StaffBirthdate)
-                val staffEmail = findViewById<EditText>(R.id.txtView_StaffCountry)
-                val staffPhone = findViewById<EditText>(R.id.txtView_StaffEmail)
-                val staffCountry = findViewById<EditText>(R.id.txtView_StaffPhone)
+                val staffName = findViewById<EditText>(R.id.edtTex_RegisterName)
+                val staffBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
+                val staffEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
+                val staffPhone = findViewById<EditText>(R.id.edtTex_RegisterPhone)
+                val staffCountry = findViewById<EditText>(R.id.edtTex_RegisterCountry)
                 val staffCreationDate = LocalDateTime.now()
 
 
