@@ -14,6 +14,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
+import java.util.*
 
 class VolleyHelper {
 
@@ -205,6 +206,54 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
 
 //----------------------------------------------------------------------
 
+    fun createNewScout (
+        context: Context, idScout : Int, scoutName: String,
+        scoutBirthdate: String, scoutEmail: String, scoutPhone: String,
+        scoutCountry: String, scoutUsername : String, scoutCreationDate : Date) {
+
+        GlobalScope.launch(Dispatchers.Default) {
+
+            queue = Volley.newRequestQueue(context)
+
+            val jsonObject = JSONObject()
+
+            jsonObject.put("idSCOUT", idScout)
+            jsonObject.put("NAME", scoutName)
+            jsonObject.put("BIRTHDATE", scoutBirthdate)
+            jsonObject.put("EMAIL", scoutEmail)
+            jsonObject.put("PHONE", scoutPhone)
+            jsonObject.put("COUNTRY", scoutCountry)
+            jsonObject.put("USERNAME", scoutUsername)
+            jsonObject.put("CREATION_DATE", scoutCreationDate)
+
+            val jsonObjectRequest = object : JsonObjectRequest(
+
+                Method.POST,
+                BASE_API + POST_STAFF,
+                jsonObject,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
+                },
+                Response.ErrorListener {
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(jsonObjectRequest)
+        }
+    }
+//----------------------------------------------------------------------
+
     companion object{
 
         const val  BASE_API = "http://192.168.1.86:3000"
@@ -214,6 +263,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
         const val GET_SCOUTS = "/api/GetScout"
         const val GET_SCOUTS_ID = "/api/getScoutID"
         const val GET_STAFF = "/api/GetStaff"
+        const val POST_STAFF = "/api/PostScout"
 
 
 

@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterPhone"
         />
     <Button
-        android:id="@+id/btn_RegisterCreateStaff"
+        android:id="@+id/btn_CreateStaff"
         android:layout_width="270dp"
         android:layout_height="60dp"
         android:layout_marginTop="80dp"
