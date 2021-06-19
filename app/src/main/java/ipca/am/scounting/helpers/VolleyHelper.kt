@@ -205,7 +205,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
     }
 }
 
-//----------------------------------------------------------------------
+//add scout ----------------------------------------------------------------------
 
     fun createNewScout (
         context: Context, idScout : Int, scoutName: String,
@@ -230,7 +230,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
             val jsonObjectRequest = object : JsonObjectRequest(
 
                 Method.POST,
-                BASE_API + POST_STAFF,
+                BASE_API + POST_SCOUT,
                 jsonObject,
                 Response.Listener {
 
@@ -253,8 +253,59 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
             queue!!.add(jsonObjectRequest)
         }
     }
-//----------------------------------------------------------------------
+//add staff ----------------------------------------------------------------------
 
+
+    fun createNewStaff (
+        context: Context, idStaff : Int, staffName: String,
+        staffBirthdate: String, staffEmail: String, staffPhone: String,
+        staffCountry: String, staffCreationDate : LocalDateTime) {
+
+        GlobalScope.launch(Dispatchers.Default) {
+
+            queue = Volley.newRequestQueue(context)
+
+            val jsonObject = JSONObject()
+            //// MUDAR PARA STAFF
+            jsonObject.put("idSTAFF", idStaff)
+            jsonObject.put("NAME", staffName)
+            jsonObject.put("BIRTHDATE", staffBirthdate)
+            jsonObject.put("COUNTRY", staffCountry)
+            jsonObject.put("EMAIL", staffEmail)
+            jsonObject.put("PHONE", staffPhone)
+            jsonObject.put("CREATION_DATE", staffCreationDate)
+
+            val jsonObjectRequest = object : JsonObjectRequest(
+
+                Method.POST,
+                BASE_API + GET_STAFF,
+                jsonObject,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
+                },
+                Response.ErrorListener {
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(jsonObjectRequest)
+        }
+    }
+
+
+
+
+//--------------------------------------------------------------------------------
     companion object{
 
         const val  BASE_API = "http://192.168.1.86:3000"
@@ -263,8 +314,10 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
         const val LOGIN = "/user/login"
         const val GET_SCOUTS = "/api/GetScout"
         const val GET_SCOUTS_ID = "/api/getScoutID"
+        const val POST_SCOUT = "/api/PostScout"
         const val GET_STAFF = "/api/GetStaff"
-        const val POST_STAFF = "/api/PostScout"
+
+
 
 
 

@@ -25,15 +25,6 @@ class CreateScout : AppCompatActivity() {
 
 
 
-    val bundle = intent.extras
-    bundle?.let {
-
-        idScout = it.getInt("idSCOUT")
-
-    }
-
-
-
         btn_CreateScout.setOnClickListener {
 
         if (edtTex_RegisterName.text.toString() == "" || edtTex_RegisterUsername.text.toString() == ""
@@ -48,12 +39,12 @@ class CreateScout : AppCompatActivity() {
 
             val intentResult = Intent()
 
-            val scoutName      = findViewById<EditText>(R.id.edtTex_addActivitiesName)
-            val scoutUserName = findViewById<EditText>(R.id.edtTex_addActivitiesStartDate)
-            val scoutBirthdate = findViewById<EditText>(R.id.edtTex_addActivitiesAddress)
-            val scoutEmail = findViewById<EditText>(R.id.edtTex_addActivitiesCountry)
-            val scoutPhone = findViewById<EditText>(R.id.edtTex_addActivitiesEmail)
-            val scoutCountry = findViewById<EditText>(R.id.edtTex_addActivitiesPhone)
+            val scoutName = findViewById<EditText>(R.id.edtTex_RegisterName)
+            val scoutUserName = findViewById<EditText>(R.id.edtTex_RegisterUsername)
+            val scoutBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
+            val scoutEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
+            val scoutPhone = findViewById<EditText>(R.id.edtTex_RegisterPhone)
+            val scoutCountry = findViewById<EditText>(R.id.edtTex_RegisterCountry)
             val scoutCreationDate = LocalDateTime.now()
 
 
