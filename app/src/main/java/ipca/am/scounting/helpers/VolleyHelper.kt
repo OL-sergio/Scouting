@@ -104,6 +104,7 @@ class VolleyHelper {
             queue!!.add(jsonObjectRequest)
         }
     }
+
 // GET SCOUTS----------------------------------------------------
 fun getScouts(context: Context, ScoutsEvent : ((JSONArray?) -> Unit)) {
 
@@ -137,6 +138,7 @@ fun getScouts(context: Context, ScoutsEvent : ((JSONArray?) -> Unit)) {
         queue!!.add(stringRequest)
     }
 }
+
 // GET STAFF -----------------------------------------------------------
 fun getStaff(context: Context, StaffEvent : ((JSONArray?) -> Unit)) {
 
@@ -171,7 +173,9 @@ fun getStaff(context: Context, StaffEvent : ((JSONArray?) -> Unit)) {
     }
 }
 // GET SCOUTS ID -------------------------------------------------------
-fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -> Unit)) {
+fun getScoutByID (context: Context,
+                  ScoutsId : Int,
+                  ScoutsEvent: ((JSONArray?) -> Unit)) {
 
     GlobalScope.launch(Dispatchers.IO) {
 
@@ -216,7 +220,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
         scoutCountry: String,
         scoutUsername: String,
         scoutCreationDate: LocalDateTime,
-        param: (Any) -> Unit
+        createScoutEvent : ((Boolean) -> Unit)
     ) {
 
         GlobalScope.launch(Dispatchers.Default) {
@@ -241,11 +245,13 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
                 jsonObject,
                 Response.Listener {
 
-                    tournamentsEvent.invoke(true)
+                    createScoutEvent.invoke(true)
                     Log.d("VolleyHelper", it.toString())
                 },
                 Response.ErrorListener {
                     Log.d("VolleyHelper", it.toString())
+                    createScoutEvent.invoke(null)
+
                 }
             ) {
 
@@ -260,13 +266,12 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
             queue!!.add(jsonObjectRequest)
         }
     }
+
 //add staff ----------------------------------------------------------------------
-
-
     internal fun createNewStaff (
         context: Context, idStaff: Int, staffName: String,
         staffBirthdate: String, staffEmail: String, staffPhone: String,
-        staffCountry: String, staffCreationDate: LocalDateTime, param: (Any) -> Unit
+        staffCountry: String, staffCreationDate: LocalDateTime, createStaffEvent : ((Boolean) -> Unit)
     ) {
 
         GlobalScope.launch(Dispatchers.Default) {
@@ -289,10 +294,13 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
                 BASE_API + GET_STAFF,
                 jsonObject,
                 Response.Listener {
+                    createStaffEvent.invoke(true)
                     Log.d("VolleyHelper", it.toString())
                 },
                 Response.ErrorListener {
                     Log.d("VolleyHelper", it.toString())
+                    createStaffEvent.invoke(null)
+
                 }
             ) {
 
