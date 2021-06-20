@@ -1,6 +1,5 @@
 package ipca.am.scounting.helpers
 
-import android.app.DownloadManager
 import java.time.LocalDateTime
 import android.content.Context
 import android.util.Log
@@ -207,10 +206,18 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
 
 //add scout ----------------------------------------------------------------------
 
-    fun createNewScout (
-        context: Context, idScout : Int, scoutName: String,
-        scoutBirthdate: String, scoutEmail: String, scoutPhone: String,
-        scoutCountry: String, scoutUsername : String, scoutCreationDate : LocalDateTime) {
+    private fun createNewScout (
+        context: Context,
+        idScout: Int,
+        scoutName: String,
+        scoutBirthdate: String,
+        scoutEmail: String,
+        scoutPhone: String,
+        scoutCountry: String,
+        scoutUsername: String,
+        scoutCreationDate: LocalDateTime,
+        param: (Any) -> Unit
+    ) {
 
         GlobalScope.launch(Dispatchers.Default) {
 
@@ -256,10 +263,11 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
 //add staff ----------------------------------------------------------------------
 
 
-    fun createNewStaff (
-        context: Context, idStaff : Int, staffName: String,
+    private fun createNewStaff (
+        context: Context, idStaff: Int, staffName: String,
         staffBirthdate: String, staffEmail: String, staffPhone: String,
-        staffCountry: String, staffCreationDate : LocalDateTime) {
+        staffCountry: String, staffCreationDate: LocalDateTime, param: (Any) -> Unit
+    ) {
 
         GlobalScope.launch(Dispatchers.Default) {
 

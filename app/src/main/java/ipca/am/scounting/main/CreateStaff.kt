@@ -2,16 +2,20 @@ package ipca.am.scounting.main
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import ipca.am.scounting.R
 import ipca.am.scounting.helpers.VolleyHelper
 import kotlinx.android.synthetic.main.activity_create_staff.*
 import java.time.LocalDateTime
 
 class CreateStaff : AppCompatActivity() {
+    var idStaff : Int? = null
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_staff)
@@ -51,7 +55,7 @@ class CreateStaff : AppCompatActivity() {
 
                     if (response) {
 
-                        Toast.makeText(applicationContext,"Scout criado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,"Staff criado", Toast.LENGTH_SHORT).show()
 
                         val intent = Intent(this, ActivityDetailScout::class.java)
                         intent.putExtra("Scout ID", idStaff!!.toInt())
@@ -61,7 +65,7 @@ class CreateStaff : AppCompatActivity() {
 
                     else {
 
-                        Toast.makeText(applicationContext,"Erro ao criar Scout", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,"Erro ao criar Staff", Toast.LENGTH_SHORT).show()
                     }
 
                     setResult(Activity.RESULT_OK, intentResult)
