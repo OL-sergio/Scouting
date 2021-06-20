@@ -7,7 +7,7 @@ import java.util.*
 class ActivitiesModel {
 
 
-    var idActivities : Int? = null
+
     var activitiesName: String? = null
     var activitiesStartDate: String? = null
     var activitiesAddress: String? = null
@@ -20,18 +20,18 @@ class ActivitiesModel {
 
         fun parseJSON (jsonArticle : JSONObject) : ActivitiesModel {
 
-            val tournament = ActivitiesModel()
+            val activities = ActivitiesModel()
 
-            tournament.idActivities      = jsonArticle.getInt("idACTIVITIES")
-            tournament.activitiesName    = jsonArticle.getString("NAME")
-            tournament.activitiesStartDate = jsonArticle.getString("START_DATE")
-            tournament.activitiesAddress = jsonArticle.getString("ADDRESS")
-            tournament.activitiesCity    = jsonArticle.getString("CITY")
-            tournament.activitiesCountry = jsonArticle.getString("COUNTRY")
-            tournament.activitiesEmail   = jsonArticle.getString("EMAIL")
-            tournament.activitiesPhone   = jsonArticle.getString("PHONE")
 
-            return tournament
+            activities.activitiesName    = jsonArticle.getString("NAME")
+            activities.activitiesStartDate = jsonArticle.getString("START_DATE")
+            activities.activitiesAddress = jsonArticle.getString("ADDRESS")
+            activities.activitiesCity    = jsonArticle.getString("CITY")
+            activities.activitiesCountry = jsonArticle.getString("COUNTRY")
+            activities.activitiesEmail   = jsonArticle.getString("EMAIL")
+            activities.activitiesPhone   = jsonArticle.getString("PHONE")
+
+            return activities
         }
     }
 }

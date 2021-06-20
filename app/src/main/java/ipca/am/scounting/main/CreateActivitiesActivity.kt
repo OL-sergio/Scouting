@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_create_activities.*
 
 class CreateActivitiesActivity : AppCompatActivity() {
 
-    var idActivities : Int? = null
+
 
 
 
@@ -22,12 +22,12 @@ class CreateActivitiesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_activities)
 
-        val bundle = intent.extras
+     /*  val bundle = intent.extras
         bundle?.let {
 
             idActivities = it.getInt("idACTIVITIES")
 
-        }
+        }*/
 
 
 
@@ -58,7 +58,7 @@ class CreateActivitiesActivity : AppCompatActivity() {
                 VolleyHelper.instance.createNewActivities (
 
                     this@CreateActivitiesActivity,
-                    idActivities!!.plus(1),
+
                     activitiesName.text.toString(),
                     activitiesStartDate.text.toString(),
                     activitiesAddress.text.toString(),
@@ -72,8 +72,6 @@ class CreateActivitiesActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext,getString(R.string.activities_created), Toast.LENGTH_SHORT).show()
 
                         val intent = Intent(this, ActivitiesDetailActivity::class.java)
-                        intent.putExtra("Team ID", idActivities!!.toInt())
-
                         startActivity(intent)
                     }
 

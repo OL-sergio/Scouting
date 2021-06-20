@@ -172,10 +172,10 @@ class VolleyHelper {
     }
 
     fun createNewActivities (
-        context: Context, idActivities: Int, activitiesName: String,
+        context: Context,  activitiesName: String,
         activitiesStartDate: String, activitiesAddress: String, activitiesCity: String,
         activitiesCountry: String, activitiesEmail: String, activitiesPhone: String,
-        tournamentsEvent: ((Boolean) -> Unit)) {
+        ActivitiesEvent: ((Boolean) -> Unit)) {
 
         GlobalScope.launch(Dispatchers.Default) {
 
@@ -183,7 +183,7 @@ class VolleyHelper {
 
             val jsonObject = JSONObject()
 
-            jsonObject.put("idACTIVITIES", idActivities)
+
             jsonObject.put("NAME", activitiesName)
             jsonObject.put("START_DATE", activitiesStartDate)
             jsonObject.put("ADDRESS", activitiesAddress)
@@ -199,7 +199,7 @@ class VolleyHelper {
                 jsonObject,
                 Response.Listener {
 
-                    tournamentsEvent.invoke(true)
+                    ActivitiesEvent.invoke(true)
                     Log.d("VolleyHelper", it.toString())
                 },
                 Response.ErrorListener {
@@ -225,9 +225,9 @@ class VolleyHelper {
 
         const val REGISTER = "/user/register"
         const val LOGIN = "/user/login"
-        const val GET_ACTIVITIES = "/api/GETActivities"
-        const val GET_ACTIVITIES_ID = "/api/GETActivities:id"
-        const val POST_NEW_ACTIVITIES = "/api/POSTActivities"
+        const val GET_ACTIVITIES = "/api/viewActivities"
+        const val GET_ACTIVITIES_ID = "/api/viewActivities:id"
+        const val POST_NEW_ACTIVITIES = "/api/createActivities"
 
 
 
