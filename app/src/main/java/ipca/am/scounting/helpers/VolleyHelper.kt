@@ -206,7 +206,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
 
 //add scout ----------------------------------------------------------------------
 
-    private fun createNewScout (
+    internal fun createNewScout (
         context: Context,
         idScout: Int,
         scoutName: String,
@@ -263,7 +263,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
 //add staff ----------------------------------------------------------------------
 
 
-    private fun createNewStaff (
+    internal fun createNewStaff (
         context: Context, idStaff: Int, staffName: String,
         staffBirthdate: String, staffEmail: String, staffPhone: String,
         staffCountry: String, staffCreationDate: LocalDateTime, param: (Any) -> Unit
@@ -274,7 +274,7 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
             queue = Volley.newRequestQueue(context)
 
             val jsonObject = JSONObject()
-            //// MUDAR PARA STAFF
+
             jsonObject.put("idSTAFF", idStaff)
             jsonObject.put("NAME", staffName)
             jsonObject.put("BIRTHDATE", staffBirthdate)
@@ -289,8 +289,6 @@ fun getScoutByID (context: Context, ScoutsId : Int, ScoutsEvent: ((JSONArray?) -
                 BASE_API + GET_STAFF,
                 jsonObject,
                 Response.Listener {
-
-                    tournamentsEvent.invoke(true)
                     Log.d("VolleyHelper", it.toString())
                 },
                 Response.ErrorListener {
