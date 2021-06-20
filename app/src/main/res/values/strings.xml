@@ -29,4 +29,8 @@
     <string name="failed_to_create_activities">"Erro ao criar uma nova atividade "</string>
     <string name="cidade">Cidade</string>
     <string name="criar_atividade">Criar Atividade</string>
+    <string name="n_o_tens_conta">Não tens conta:</string>
+    <string name="login">Login</string>
+    <string name="j_tens_conta">Já tens Conta</string>
+    <string name="realizar_login">Realizar Login</string>
 </resources>

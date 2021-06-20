@@ -11,7 +11,7 @@
         android:id="@+id/txtView_newUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:text="@string/novo_utilizador"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +21,8 @@
     <EditText
         android:id="@+id/edtTex_RegisterUsername"
         android:layout_width="270dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:textSize="17sp"
         android:hint="@string/nome_utlilizador"
         android:singleLine="true"
@@ -50,7 +50,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:textSize="17sp"
-        android:hint="Email"
+        android:hint="@string/email"
         android:singleLine="true"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,12 +87,37 @@
         android:id="@+id/btn_RegisterCreateUser"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:text="@string/criar_utilizador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterNationality"
         />
+    <LinearLayout
+        android:id="@+id/RegisterLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_RegisterCreateUser">
 
+    <TextView
+        android:id="@+id/txtView_GoToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/j_tens_conta"
+        android:layout_marginEnd="5dp"
+        />
+
+    <TextView
+        android:id="@+id/txtView_GoToLoginUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/realizar_login"
+        />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,18 @@ class RegisterActivity : AppCompatActivity() {
             registerUer()
 
         }
+
+        findViewById<TextView>(R.id.txtView_GoToLogin).setOnClickListener {
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<TextView>(R.id.txtView_GoToLoginUser).setOnClickListener {
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun registerUer() {
