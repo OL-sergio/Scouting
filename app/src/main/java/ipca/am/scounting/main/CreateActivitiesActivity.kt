@@ -86,7 +86,7 @@ class CreateActivitiesActivity : AppCompatActivity() {
         }
         findViewById<TextView>(R.id.txtView_GoToCreateActivities).setOnClickListener {
 
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, CreateActivitiesActivity::class.java)
             startActivity(intent)
         }
 
