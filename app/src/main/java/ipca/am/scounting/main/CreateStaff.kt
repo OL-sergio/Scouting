@@ -12,6 +12,7 @@ import ipca.am.scounting.R
 import ipca.am.scounting.helpers.VolleyHelper
 import kotlinx.android.synthetic.main.activity_create_staff.*
 import java.time.LocalDateTime
+import java.util.*
 
 class CreateStaff : AppCompatActivity() {
     var idStaff : Int? = null
@@ -33,7 +34,7 @@ class CreateStaff : AppCompatActivity() {
             else {
 
                 val intentResult = Intent()
-
+                idStaff = (0..400000000).random()
                 val staffName = findViewById<EditText>(R.id.edtTex_RegisterName)
                 val staffBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
                 val staffEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
@@ -45,7 +46,7 @@ class CreateStaff : AppCompatActivity() {
                 VolleyHelper.instance.createNewStaff (
 
                     this@CreateStaff,
-                    idStaff!!.plus(1),
+                    idStaff!!,
                     staffName.text.toString(),
                     staffBirthdate.text.toString(),
                     staffEmail.text.toString(),
@@ -57,8 +58,8 @@ class CreateStaff : AppCompatActivity() {
 
                         Toast.makeText(applicationContext,"Staff criado", Toast.LENGTH_SHORT).show()
 
-                        val intent = Intent(this, ActivityDetailScout::class.java)
-                        intent.putExtra("Scout ID", idStaff!!.toInt())
+                        val intent = Intent(this, ActivityDetailStaff::class.java)
+                        intent.putExtra("Staff ID", idStaff!!.toInt())
 
                         startActivity(intent)
                     }

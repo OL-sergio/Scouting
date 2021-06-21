@@ -291,7 +291,7 @@ fun getScoutByID (context: Context,
             val jsonObjectRequest = object : JsonObjectRequest(
 
                 Method.POST,
-                BASE_API + GET_STAFF,
+                BASE_API + POST_STAFF,
                 jsonObject,
                 Response.Listener {
                     createStaffEvent.invoke(true)
@@ -329,6 +329,7 @@ fun getScoutByID (context: Context,
         const val GET_SCOUTS = "/api/GetScout"
         const val GET_SCOUTS_ID = "/api/GetScoutID"
         const val POST_SCOUT = "/api/PostScout"
+        const val POST_STAFF = "/api/PostStaff"
         const val GET_STAFF = "/api/GetStaff"
 
 

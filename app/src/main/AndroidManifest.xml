@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Scounting"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".main.ActivityDetailScout">
+        <activity android:name=".main.ActivityDetailStaff">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

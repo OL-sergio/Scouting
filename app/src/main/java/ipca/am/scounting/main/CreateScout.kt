@@ -1,19 +1,18 @@
 package ipca.am.scounting.main
-
 import android.app.Activity
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import ipca.am.scounting.R
-import java.time.LocalDateTime
 import ipca.am.scounting.helpers.VolleyHelper
 import kotlinx.android.synthetic.main.activity_create_activities.*
-import kotlinx.android.synthetic.main.activity_scouts_row.*
 import kotlinx.android.synthetic.main.activity_create_scout.*
+import kotlinx.android.synthetic.main.activity_scouts_row.*
+import java.time.LocalDateTime
 
 class CreateScout : AppCompatActivity() {
     var idScout : Int? = null
@@ -22,8 +21,6 @@ class CreateScout : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_scout)
-
-
 
         btn_CreateScout.setOnClickListener {
 
@@ -37,7 +34,7 @@ class CreateScout : AppCompatActivity() {
         else {
 
             val intentResult = Intent()
-
+            idScout = (0..400000000).random()
             val scoutName = findViewById<EditText>(R.id.edtTex_RegisterName)
             val scoutBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
             val scoutEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
@@ -49,7 +46,7 @@ class CreateScout : AppCompatActivity() {
             VolleyHelper.instance.createNewScout (
 
                 this@CreateScout,
-                idScout!!.plus(1),
+                idScout!!,
                 scoutName.text.toString(),
                 scoutBirthdate.text.toString(),
                 scoutEmail.text.toString(),
@@ -68,7 +65,6 @@ class CreateScout : AppCompatActivity() {
                 }
 
                 else {
-
                     Toast.makeText(applicationContext,"Erro ao criar Scout", Toast.LENGTH_SHORT).show()
                 }
 
