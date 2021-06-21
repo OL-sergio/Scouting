@@ -25,8 +25,8 @@ class CreateStaff : AppCompatActivity() {
         btn_CreateStaff.setOnClickListener {
 
             if (edtTex_RegisterName.text.toString() == "" || edtTex_RegisterBirthdate.text.toString() == ""
-                || edtTex_RegisterEmail.text.toString() == "" || edtTex_RegisterPhone.text.toString() == ""
-                || edtTex_RegisterPhone.text.toString() == "" || edtTex_RegisterCountry.text.toString() == "") {
+                || edtTex_RegisterEmail.text.toString() == "" || edtTex_AddScoutPhone.text.toString() == ""
+                || edtTex_AddScoutPhone.text.toString() == "" || edtTex_RegisterCountry.text.toString() == "") {
 
                 Toast.makeText(applicationContext,"Preencher todos campos", Toast.LENGTH_SHORT).show()
             }
@@ -38,7 +38,7 @@ class CreateStaff : AppCompatActivity() {
                 val staffName = findViewById<EditText>(R.id.edtTex_RegisterName)
                 val staffBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
                 val staffEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
-                val staffPhone = findViewById<EditText>(R.id.edtTex_RegisterPhone)
+                val staffPhone = findViewById<EditText>(R.id.edtTex_AddScoutPhone)
                 val staffCountry = findViewById<EditText>(R.id.edtTex_RegisterCountry)
                 val staffCreationDate = LocalDateTime.now()
 
@@ -58,7 +58,7 @@ class CreateStaff : AppCompatActivity() {
 
                         Toast.makeText(applicationContext,"Staff criado", Toast.LENGTH_SHORT).show()
 
-                        val intent = Intent(this, ActivityDetailStaff::class.java)
+                        val intent = Intent(this, DetailStaff::class.java)
                         intent.putExtra("Staff ID", idStaff!!.toInt())
 
                         startActivity(intent)

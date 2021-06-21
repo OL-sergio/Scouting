@@ -25,7 +25,7 @@ class CreateScout : AppCompatActivity() {
         btn_CreateScout.setOnClickListener {
 
         if (edtTex_RegisterName.text.toString() == "" || edtTex_RegisterBirthdate.text.toString() == ""
-            || edtTex_RegisterEmail.text.toString() == "" || edtTex_RegisterPhone.text.toString() == ""
+            || edtTex_RegisterEmail.text.toString() == "" || edtTex_AddScoutPhone.text.toString() == ""
             ||  edtTex_RegisterCountry.text.toString() == "") {
 
             Toast.makeText(applicationContext,"Preencher todos campos", Toast.LENGTH_SHORT).show()
@@ -38,7 +38,7 @@ class CreateScout : AppCompatActivity() {
             val scoutName = findViewById<EditText>(R.id.edtTex_RegisterName)
             val scoutBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
             val scoutEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
-            val scoutPhone = findViewById<EditText>(R.id.edtTex_RegisterPhone)
+            val scoutPhone = findViewById<EditText>(R.id.edtTex_AddScoutPhone)
             val scoutCountry = findViewById<EditText>(R.id.edtTex_RegisterCountry)
             val scoutCreationDate = LocalDateTime.now()
 
@@ -58,7 +58,7 @@ class CreateScout : AppCompatActivity() {
 
                     Toast.makeText(applicationContext,"Scout criado", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, ActivityDetailScout::class.java)
+                    val intent = Intent(this, DetailScout::class.java)
                     intent.putExtra("Scout ID", idScout!!.toInt())
 
                     startActivity(intent)

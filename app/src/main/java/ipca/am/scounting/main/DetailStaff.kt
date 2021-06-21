@@ -12,7 +12,7 @@ import ipca.am.scounting.models.StaffModel
 import kotlinx.android.synthetic.main.activity_staff_detail.*
 import org.json.JSONObject
 
-class ActivityDetailStaff : AppCompatActivity() {
+class DetailStaff : AppCompatActivity() {
 
 
 

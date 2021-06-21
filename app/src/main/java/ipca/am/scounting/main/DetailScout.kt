@@ -12,7 +12,7 @@ import ipca.am.scounting.models.ScoutModel
 import kotlinx.android.synthetic.main.activity_scout_detail.*
 import org.json.JSONObject
 
-class ActivityDetailScout : AppCompatActivity()  {
+class DetailScout : AppCompatActivity()  {
 
         var scouts : MutableList<ScoutModel> = ArrayList()
         var scoutAdapter : ScoutAdapter? = null

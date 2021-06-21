@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterBirthdate"
         />
     <EditText
-        android:id="@+id/edtTex_RegisterPhone"
+        android:id="@+id/edtTex_AddScoutPhone"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
@@ -83,7 +83,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterPhone"
+        app:layout_constraintTop_toBottomOf="@id/edtTex_AddScoutPhone"
         />
     <Button
         android:id="@+id/btn_CreateScout"
