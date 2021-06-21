@@ -24,9 +24,9 @@ class CreateScout : AppCompatActivity() {
 
         btn_CreateScout.setOnClickListener {
 
-        if (edtTex_RegisterName.text.toString() == "" || edtTex_RegisterBirthdate.text.toString() == ""
-            || edtTex_RegisterEmail.text.toString() == "" || edtTex_AddScoutPhone.text.toString() == ""
-            ||  edtTex_RegisterCountry.text.toString() == "") {
+        if (editTextRegisterName.text.toString() == "" || editTextRegisterBirthdate.text.toString() == ""
+            || editTextRegisterEmail.text.toString() == "" || editTextRegisterPhone.text.toString() == ""
+            ||  editTextRegisterCountry.text.toString() == "") {
 
             Toast.makeText(applicationContext,"Preencher todos campos", Toast.LENGTH_SHORT).show()
         }
@@ -35,11 +35,11 @@ class CreateScout : AppCompatActivity() {
 
             val intentResult = Intent()
             idScout = (0..400000000).random()
-            val scoutName = findViewById<EditText>(R.id.edtTex_RegisterName)
-            val scoutBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
-            val scoutEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
-            val scoutPhone = findViewById<EditText>(R.id.edtTex_AddScoutPhone)
-            val scoutCountry = findViewById<EditText>(R.id.edtTex_RegisterCountry)
+            val scoutName = findViewById<EditText>(R.id.editTextRegisterName)
+            val scoutBirthdate = findViewById<EditText>(R.id.editTextRegisterBirthdate)
+            val scoutEmail = findViewById<EditText>(R.id.editTextRegisterEmail)
+            val scoutPhone = findViewById<EditText>(R.id.editTextRegisterPhone)
+            val scoutCountry = findViewById<EditText>(R.id.editTextRegisterCountry)
             val scoutCreationDate = LocalDateTime.now()
 
 

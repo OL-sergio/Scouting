@@ -25,9 +25,9 @@ class RegisterActivity : AppCompatActivity() {
     private fun registerUer() {
 
         val username : String = edtTex_RegisterUsername.text.toString()
-        val email : String = edtTex_RegisterEmail.text.toString()
+        val email : String = editTextRegisterEmail.text.toString()
         val password : String = edtTex_RegisterPassword.text.toString()
-        val birthdate : String = edtTex_RegisterBirthdate.text.toString()
+        val birthdate : String = editTextRegisterBirthdate.text.toString()
         val nationality : String = edtTex_RegisterNationality.text.toString()
 
         if (username == ""){

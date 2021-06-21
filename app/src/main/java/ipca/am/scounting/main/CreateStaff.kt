@@ -24,9 +24,9 @@ class CreateStaff : AppCompatActivity() {
 
         btn_CreateStaff.setOnClickListener {
 
-            if (edtTex_RegisterName.text.toString() == "" || edtTex_RegisterBirthdate.text.toString() == ""
-                || edtTex_RegisterEmail.text.toString() == "" || edtTex_AddScoutPhone.text.toString() == ""
-                || edtTex_AddScoutPhone.text.toString() == "" || edtTex_RegisterCountry.text.toString() == "") {
+            if (editTextRegisterName.text.toString() == "" || editTextRegisterBirthdate.text.toString() == ""
+                || editTextRegisterEmail.text.toString() == "" || editTextRegisterPhone.text.toString() == ""
+                || editTextRegisterPhone.text.toString() == "" || editTextRegisterCountry.text.toString() == "") {
 
                 Toast.makeText(applicationContext,"Preencher todos campos", Toast.LENGTH_SHORT).show()
             }
@@ -35,11 +35,11 @@ class CreateStaff : AppCompatActivity() {
 
                 val intentResult = Intent()
                 idStaff = (0..400000000).random()
-                val staffName = findViewById<EditText>(R.id.edtTex_RegisterName)
-                val staffBirthdate = findViewById<EditText>(R.id.edtTex_RegisterBirthdate)
-                val staffEmail = findViewById<EditText>(R.id.edtTex_RegisterEmail)
-                val staffPhone = findViewById<EditText>(R.id.edtTex_AddScoutPhone)
-                val staffCountry = findViewById<EditText>(R.id.edtTex_RegisterCountry)
+                val staffName = findViewById<EditText>(R.id.editTextRegisterName)
+                val staffBirthdate = findViewById<EditText>(R.id.editTextRegisterBirthdate)
+                val staffEmail = findViewById<EditText>(R.id.editTextRegisterEmail)
+                val staffPhone = findViewById<EditText>(R.id.editTextRegisterPhone)
+                val staffCountry = findViewById<EditText>(R.id.editTextRegisterCountry)
                 val staffCreationDate = LocalDateTime.now()
 
 

@@ -11,19 +11,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Novo Staff"
+        android:text="@string/novo_staff"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtTex_RegisterName"
+        android:id="@+id/editTextRegisterName"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:textSize="17sp"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:singleLine="true"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,68 +33,68 @@
 
 
     <EditText
-        android:id="@+id/edtTex_RegisterBirthdate"
+        android:id="@+id/editTextRegisterBirthdate"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:textSize="17sp"
-        android:hint="@string/birthdate"
+        android:hint="@string/data_de_nascimento"
         android:singleLine="true"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterName"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterName"
         />
 
     <EditText
-        android:id="@+id/edtTex_RegisterEmail"
+        android:id="@+id/editTextRegisterEmail"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:textSize="17sp"
-        android:hint="Email"
+        android:hint="@string/email"
         android:singleLine="true"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterBirthdate"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterBirthdate"
         />
     <EditText
-        android:id="@+id/edtTex_AddScoutPhone"
+        android:id="@+id/editTextRegisterPhone"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:textSize="17sp"
-        android:hint="Número de Telefone"
+        android:hint="@string/numero_de_telemovel"
         android:singleLine="true"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterEmail"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterEmail"
         />
 
     <EditText
-        android:id="@+id/edtTex_RegisterCountry"
+        android:id="@+id/editTextRegisterCountry"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:textSize="17sp"
-        android:hint="País"
+        android:hint="@string/pa_s"
         android:singleLine="true"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtTex_AddScoutPhone"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterPhone"
         />
     <Button
         android:id="@+id/btn_CreateStaff"
         android:layout_width="270dp"
         android:layout_height="60dp"
         android:layout_marginTop="80dp"
-        android:text="Criar Staff "
+        android:text="@string/criar_staff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterCountry"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterCountry"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

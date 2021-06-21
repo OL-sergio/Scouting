@@ -28,7 +28,7 @@
                     android:id="@+id/txtView_StaffName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nome Staff"
+                    android:text="@string/nome_staff"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
                 <TextView
@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Birthdate"
+                    android:text="@string/data_de_nascimento"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     />
@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Phone Number"
+                    android:text="@string/numero_de_telemovel"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     />
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Email"
+                    android:text="@string/email"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     />
@@ -63,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Country"
+                    android:text="@string/pa_s"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     />
@@ -84,7 +84,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:textAlignment="center"
-                    android:text="Data de adeção:"
+                    android:text="@string/data_de_ade_o"
                     />
                 <TextView
                     android:id="@+id/txtView_StaffCreationDate"
@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="center"
-                    android:text="Creation date"
+                    android:text="@string/creation_date"
 
                     />
             </LinearLayout>
