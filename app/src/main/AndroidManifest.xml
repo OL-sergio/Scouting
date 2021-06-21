@@ -18,16 +18,17 @@
 
         <activity
             android:name=".main.ActivitiesDetailActivity">
-        </activity>
-        <activity android:name=".main.CreateActivitiesActivity">
-
-        </activity>
-        <activity android:name=".login.RegisterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".main.CreateActivitiesActivity">
+
+        </activity>
+        <activity android:name=".login.RegisterActivity" >
+
         </activity>
         <activity android:name=".login.LoginActivity" />
 

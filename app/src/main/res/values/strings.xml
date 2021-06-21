@@ -33,4 +33,11 @@
     <string name="login">Login</string>
     <string name="j_tens_conta">Já tens Conta</string>
     <string name="realizar_login">Realizar Login</string>
+    <string name="criar_novo_utilizador">Criar novo Utilizador</string>
+    <string name="voltar">Voltar</string>
+    <string name="date">Date:</string>
+    <string name="dirigentes">Dirigentes</string>
+    <string name="escuteiro">Escuteiro</string>
+    <string name="escoteiros">Escoteiros</string>
+    <string name="criar">Criar</string>
 </resources>

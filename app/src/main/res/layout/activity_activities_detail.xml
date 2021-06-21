@@ -4,19 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1B0018EE"
     tools:context=".main.ActivitiesDetailActivity">
+
+    <TextView
+        android:id="@+id/textViewActivities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="190dp"
+        android:text="Atividades"
+        android:textColor="#0018EE"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listView_ActivitiesDetailActivity"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="401dp"
+        android:layout_height="533dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewActivities">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/listViewLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/listView_ActivitiesDetailActivity">
+
+        <Button
+            android:id="@+id/txtView_GoToCreateActivities"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_shape_button_mini"
+            android:text="@string/criar"
+            android:layout_marginEnd="5dp"
+            />
+
+        <Button
+            android:id="@+id/txtView_GoToScounting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_shape_button_mini"
+            android:text="@string/escoteiros"
+             />
+
+        <Button
+            android:id="@+id/txtView_GoToStaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_shape_button_mini"
+            android:layout_marginStart="5dp"
+            android:text="@string/dirigentes"
+            />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

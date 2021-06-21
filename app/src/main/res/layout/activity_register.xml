@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1B0018EE"
     tools:context=".login.RegisterActivity">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="@string/novo_utilizador"
+        android:textColor="#0018EE"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +28,9 @@
         android:textSize="17sp"
         android:hint="@string/nome_utlilizador"
         android:singleLine="true"
+        android:textColorHint="#0018EE"
         android:textAlignment="center"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtView_newUser"
@@ -39,7 +43,9 @@
         android:textSize="17sp"
         android:hint="@string/password"
         android:singleLine="true"
+        android:textColorHint="#0018EE"
         android:textAlignment="center"
+        android:inputType="numberPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterUsername"
@@ -53,6 +59,8 @@
         android:hint="@string/email"
         android:singleLine="true"
         android:textAlignment="center"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#0018EE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterPassword"
@@ -66,6 +74,8 @@
         android:hint="@string/birthdate"
         android:singleLine="true"
         android:textAlignment="center"
+        android:inputType="text|date"
+        android:textColorHint="#0018EE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterEmail"
@@ -79,20 +89,28 @@
         android:hint="@string/nationality"
         android:singleLine="true"
         android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:textColorHint="#0018EE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterBirthdate"
         />
+
     <Button
         android:id="@+id/btn_RegisterCreateUser"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="52dp"
+        android:textStyle="bold"
+        android:background="@drawable/ic_shape_button"
         android:text="@string/criar_utilizador"
+        android:textSize="18sp"
+        android:textColor="#fafafa"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterNationality"
-        />
+        app:layout_constraintTop_toBottomOf="@id/edtTex_RegisterNationality" />
+
     <LinearLayout
         android:id="@+id/RegisterLinearLayout"
         android:layout_width="wrap_content"
@@ -103,20 +121,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_RegisterCreateUser">
 
-    <TextView
-        android:id="@+id/txtView_GoToLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/j_tens_conta"
-        android:layout_marginEnd="5dp"
-        />
+        <TextView
+            android:id="@+id/txtView_GoToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/j_tens_conta"
+            android:layout_marginEnd="5dp"
+            android:textColor="#E60018EE"
+            />
 
-    <TextView
-        android:id="@+id/txtView_GoToLoginUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/realizar_login"
-        />
+        <TextView
+            android:id="@+id/txtView_GoToLoginUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/realizar_login"
+            android:textColor="#E60018EE"
+            />
 
     </LinearLayout>
 

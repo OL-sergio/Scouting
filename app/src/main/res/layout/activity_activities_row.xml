@@ -1,86 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        tools:ignore="MissingConstraints">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="match_parent"
+            android:background="#A60018EE"
+            android:orientation="vertical">
 
-            <!-- Title, secondary and supporting text -->
-            <TextView
-                android:id="@+id/txtView_ActivitiesName"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/nome_actividade"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                />
-            <TextView
-                android:id="@+id/txtView_ActivitiesDate"
+                android:background="#660018EE"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <!-- Title, secondary and supporting text -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#660018EE"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+
+                    <TextView
+                        android:id="@+id/txtView_ActivitiesName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:hint="Atividades"
+                        android:textAlignment="center"
+                        android:textColorHint="#FBFBFB"
+                        android:textColor="#FBFBFB"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#D30018EE"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.08"
+                        android:text="Data:"
+                        android:textAlignment="center"
+                        android:textColor="#FBFBFB"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/txtView_ActivitiesDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:hint="Data"
+                        android:textColorHint="#FBFBFB"
+                        android:textColor="#FBFBFB"
+                         />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#E10018EE"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:text="Morada:"
+                        android:textAlignment="center"
+                        android:textColor="#FBFBFB"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtView_ActivitiesAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:hint="Morada"
+                        android:textColorHint="#FBFBFB"
+                        android:textColor="#FBFBFB"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Date"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
-                />
-            <TextView
-                android:id="@+id/txtView_ActivitiesAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Morada"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="#0018EE"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Cidade:"
+                    android:textAlignment="center"
+                    android:textColor="#E1E2E3EA"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtView_ActivitiesCity"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Cidade"
+                    android:textAlignment="center"
+                    android:textColorHint="#E1E2E3EA"
+                    android:textColor="#FBFBFB"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="País:"
+                    android:textAlignment="center"
+                    android:textColor="#E1E2E3EA"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtView_ActivitiesCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:hint="País"
+                    android:textAlignment="center"
+                    android:textColor="#FBFBFB"
+                    android:textColorHint="#E1E2E3EA"
+                    android:textStyle="bold"
+
+                    />
+            </LinearLayout>
 
         </LinearLayout>
-
-        <!-- Buttons -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/txtView_ActivitiesCity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:text="Cidade"
-                />
-            <TextView
-                android:id="@+id/txtView_ActivitiesCountry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:text="Pais"
-
-                />
-        </LinearLayout>
-
-    </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
