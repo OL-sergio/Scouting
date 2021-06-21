@@ -5,18 +5,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import ipca.am.scounting.R
 import ipca.am.scounting.helpers.VolleyHelper
+import ipca.am.scounting.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_activities_row.*
 import kotlinx.android.synthetic.main.activity_create_activities.*
 
 
 class CreateActivitiesActivity : AppCompatActivity() {
-
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,9 +80,27 @@ class CreateActivitiesActivity : AppCompatActivity() {
 
                 setResult(Activity.RESULT_OK, intentResult)
                 finish()
+
+                }
             }
         }
-    }
-    }
+        findViewById<TextView>(R.id.txtView_GoToCreateActivities).setOnClickListener {
 
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<TextView>(R.id.txtView_GoToScounting).setOnClickListener {
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<TextView>(R.id.txtView_GoToStaff).setOnClickListener {
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+
+        }
+    }
 }
