@@ -15,26 +15,23 @@
         android:theme="@style/Theme.Scounting"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".main.CreateActivitiesActivity">
+
+        <activity
+            android:name=".main.ActivitiesDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".main.CreateActivitiesActivity">
 
         </activity>
-        <activity
-            android:name=".main.ActivitiesActivity"
-            android:label="@string/title_activity_activities"
-            android:theme="@style/Theme.Scounting.NoActionBar" />
-        <activity android:name=".login.RegisterActivity">
+        <activity android:name=".login.RegisterActivity" >
 
         </activity>
         <activity android:name=".login.LoginActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Scounting.NoActionBar" />
+
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1B0018EE"
     tools:context=".main.CreateActivitiesActivity">
 
     <ScrollView
@@ -29,9 +30,11 @@
                 android:id="@+id/txtView_newActivities"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="50dp"
                 android:text="@string/nova_atividade"
                 android:textSize="30sp"
+                android:textColor="#0729E4"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,10 +44,12 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="60dp"
-                android:hint="@string/nome_utlilizador"
+                android:hint="@string/nome"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
+                android:inputType="textPersonName"
+                android:textColorHint="#0729E4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtView_newActivities" />
@@ -54,10 +59,12 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/password"
+                android:hint="@string/data_de_in_cio"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
+                android:inputType="date"
+                android:textColorHint="#0729E4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesName" />
@@ -67,10 +74,12 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="Email"
+                android:hint="@string/morada"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
+                android:inputType="textLongMessage"
+                android:textColorHint="#0729E4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesStartDate" />
@@ -80,10 +89,12 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/birthdate"
+                android:hint="@string/cidade"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
+                android:inputType="textShortMessage"
+                android:textColorHint="#0729E4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesAddress" />
@@ -93,10 +104,12 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/nationality"
+                android:hint="@string/pa_s"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
+                android:inputType="textShortMessage"
+                android:textColorHint="#0729E4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesCity" />
@@ -106,10 +119,12 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/nome_utlilizador"
+                android:hint="@string/email"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#0729E4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesCountry" />
@@ -119,24 +134,59 @@
                 android:layout_width="270dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="32dp"
-                android:hint="@string/nome_utlilizador"
+                android:hint="@string/telefone"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textSize="17sp"
+                android:inputType="phone"
+                android:textColorHint="#0729E4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesEmail" />
 
+        <LinearLayout
+            android:id="@+id/listViewLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listView_ActivitiesDetailActivity">
+
             <Button
-                android:id="@+id/btn_RegisterCreateUser"
-                android:layout_width="270dp"
+                android:id="@+id/btn_BackDetailActivities"
+                android:layout_width="150dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginBottom="40dp"
-                android:text="@string/criar_utilizador"
+                android:text="@string/voltar"
+                android:textColor="#FAFAFA"
+                android:textSize="18sp"
+                android:background="@drawable/ic_shape_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesPhone" />
+
+            <Button
+                android:id="@+id/btn_CreateNewActivities"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/criar"
+                android:textColor="#FAFAFA"
+                android:textSize="18sp"
+                android:background="@drawable/ic_shape_button_mini"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtTex_addActivitiesPhone" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -4,10 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import ipca.am.scounting.R
 import ipca.am.scounting.helpers.VolleyHelper
-import ipca.am.scounting.main.ActivitiesActivity
+import ipca.am.scounting.main.ActivitiesDetailActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    val intent = Intent(this, ActivitiesActivity::class.java)
+                    val intent = Intent(this, ActivitiesDetailActivity::class.java)
                     intent.putExtra("Username", username.text.toString())
                     startActivity(intent)
                 }
@@ -39,13 +40,13 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-      txtView_GoToCreateNewUser.setOnClickListener {
+        findViewById<TextView>(R.id.txtView_GoToCreateNewUser).setOnClickListener {
 
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        txtView_NewUser.setOnClickListener {
+        findViewById<TextView>(R.id.txtView_NewUser).setOnClickListener {
 
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
