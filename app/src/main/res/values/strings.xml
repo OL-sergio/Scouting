@@ -26,14 +26,14 @@
     <string name="pa_s">País</string>
     <string name="numero_de_telemovel">Numero de telemovel</string>
     <string name="data_de_nascimento">Data de nascimento</string>
-    <string name="nome_staff">Nome Staff</string>
+    <string name="nome_staff">Nome Dirigente</string>
     <string name="email">Email</string>
     <string name="data_de_ade_o">Data de adeção:</string>
     <string name="creation_date">Creation date</string>
-    <string name="nome_scout">Nome Scout</string>
-    <string name="criar_scout">Criar Scout</string>
+    <string name="nome_scout">Nome Escoteiro</string>
+    <string name="criar_scout">Criar Escoteiro</string>
     <string name="nome">Nome</string>
-    <string name="novo_staff">Novo Staff</string>
-    <string name="criar_staff">Criar Staff</string>
-    <string name="novo_scout">Novo Scout</string>
+    <string name="novo_staff">Novo Dirigente</string>
+    <string name="criar_staff">Criar Dirigente</string>
+    <string name="novo_scout">Novo Escoteiro</string>
 </resources>
