@@ -53,7 +53,6 @@ class ActivityDetailScout : AppCompatActivity()  {
                 val scoutPhone = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutPhone)
                 val scoutEmail   = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutEmail)
                 val scoutCountry   = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutCountry)
-                val scoutUsername      = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutUsername)
                 val scoutCreationDate   = rowScoutDetail.findViewById<TextView>(R.id.txtView_ScoutCreationDate)
 
 
@@ -62,7 +61,6 @@ class ActivityDetailScout : AppCompatActivity()  {
                 scoutPhone.text    = scouts[position].phone.toString()
                 scoutEmail.text      = scouts[position].email
                 scoutCountry.text      = scouts[position].country
-                scoutUsername.text         = scouts[position].username
                 scoutCreationDate.text      = scouts[position].creationDate.toString()
 
                 return rowScoutDetail

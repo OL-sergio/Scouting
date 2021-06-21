@@ -21,7 +21,7 @@ class VolleyHelper {
     private var  queue : RequestQueue? = null
 
 
-    //------------------ Users -----------------------
+//------------------ Users -----------------------
 
     fun createNewUser (context : Context, username : String, password : String, email : String,
                         birthdate : String, nationality : String, createUserEvent : ((Boolean) -> Unit)) {
@@ -218,7 +218,6 @@ fun getScoutByID (context: Context,
         scoutEmail: String,
         scoutPhone: String,
         scoutCountry: String,
-        scoutUsername: String,
         scoutCreationDate: LocalDateTime,
         createScoutEvent : ((Boolean) -> Unit)
     ) {
@@ -235,7 +234,6 @@ fun getScoutByID (context: Context,
             jsonObject.put("EMAIL", scoutEmail)
             jsonObject.put("PHONE", scoutPhone)
             jsonObject.put("COUNTRY", scoutCountry)
-            jsonObject.put("USERNAME", scoutUsername)
             jsonObject.put("CREATION_DATE", scoutCreationDate)
 
             val jsonObjectRequest = object : JsonObjectRequest(
@@ -249,8 +247,10 @@ fun getScoutByID (context: Context,
                     Log.d("VolleyHelper", it.toString())
                 },
                 Response.ErrorListener {
+
                     Log.d("VolleyHelper", it.toString())
-                    createScoutEvent.invoke(null)
+
+                    createScoutEvent.invoke(false)
 
                 }
             ) {
@@ -298,8 +298,9 @@ fun getScoutByID (context: Context,
                     Log.d("VolleyHelper", it.toString())
                 },
                 Response.ErrorListener {
+
                     Log.d("VolleyHelper", it.toString())
-                    createStaffEvent.invoke(null)
+                    createStaffEvent.invoke(false)
 
                 }
             ) {
@@ -322,12 +323,11 @@ fun getScoutByID (context: Context,
 //--------------------------------------------------------------------------------
     companion object{
 
-        const val  BASE_API = "http://192.168.1.86:3000"
-
+        const val  BASE_API = "http://192.168.1.92:3000"
         const val REGISTER = "/user/register"
         const val LOGIN = "/user/login"
         const val GET_SCOUTS = "/api/GetScout"
-        const val GET_SCOUTS_ID = "/api/getScoutID"
+        const val GET_SCOUTS_ID = "/api/GetScoutID"
         const val POST_SCOUT = "/api/PostScout"
         const val GET_STAFF = "/api/GetStaff"
 
