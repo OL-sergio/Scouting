@@ -1,14 +1,16 @@
-package ipca.am.scounting.main
+package ipca.am.scouting.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import ipca.am.scounting.R
-import ipca.am.scounting.helpers.VolleyHelper
-import ipca.am.scounting.models.ActivitiesModel
+import ipca.am.scouting.R
+import ipca.am.scouting.helpers.VolleyHelper
+import ipca.am.scouting.login.LoginActivity
+import ipca.am.scouting.models.ActivitiesModel
 import kotlinx.android.synthetic.main.activity_activities_detail.*
 import org.json.JSONObject
 
@@ -28,7 +30,7 @@ class ActivitiesDetailActivity : AppCompatActivity() {
         activitiesAdapter = ActivitiesAdapter()
         listView_ActivitiesDetailActivity.adapter = activitiesAdapter
 
-        //var activitiesName : String? = null
+
 
 
 
@@ -40,10 +42,29 @@ class ActivitiesDetailActivity : AppCompatActivity() {
 
                     val activitiesJSON : JSONObject = it[index] as JSONObject
                     activities.add(ActivitiesModel.parseJSON(activitiesJSON))
-                    //
+
                 }
                 activitiesAdapter?.notifyDataSetChanged()
             }
+        }
+
+        findViewById<TextView>(R.id.txtView_GoToCreateActivities).setOnClickListener {
+
+            val intent = Intent(this, CreateActivitiesActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<TextView>(R.id.txtView_GoToScounting).setOnClickListener {
+
+            val intent = Intent(this, DetailScout::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<TextView>(R.id.txtView_GoToStaff).setOnClickListener {
+
+            val intent = Intent(this, DetailStaff::class.java)
+            startActivity(intent)
+
         }
     }
 

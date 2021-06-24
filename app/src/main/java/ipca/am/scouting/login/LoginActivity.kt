@@ -1,4 +1,4 @@
-package ipca.am.scounting.login
+package ipca.am.scouting.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import ipca.am.scounting.R
-import ipca.am.scounting.helpers.VolleyHelper
-import ipca.am.scounting.main.ActivitiesDetailActivity
+import ipca.am.scouting.R
+import ipca.am.scouting.helpers.VolleyHelper
+import ipca.am.scouting.main.ActivitiesDetailActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {

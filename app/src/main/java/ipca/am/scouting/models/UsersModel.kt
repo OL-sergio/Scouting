@@ -1,4 +1,4 @@
-package ipca.am.scounting.models
+package ipca.am.scouting.models
 
 import org.json.JSONObject
 
@@ -9,7 +9,7 @@ class UsersModel {
     var email : String? = null
     var birthdate : String? = null
     var nationality : String? = null
-
+    var creationDate : String? = null
 
     companion object {
 
@@ -22,6 +22,7 @@ class UsersModel {
             user.email = jsonArticle.getString("EMAIL")
             user.birthdate = jsonArticle.getString("BIRTHDATE")
             user.nationality = jsonArticle.getString("NATIONALITY")
+            user.creationDate = jsonArticle.getString("CREATION_DATE")
 
            return user
         }

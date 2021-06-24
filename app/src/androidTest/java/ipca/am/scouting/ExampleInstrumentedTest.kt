@@ -1,4 +1,4 @@
-package ipca.am.scounting
+package ipca.am.scouting
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

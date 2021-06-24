@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Scounting</string>
+    <string name="app_name">Scouting</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
 
@@ -37,7 +37,22 @@
     <string name="voltar">Voltar</string>
     <string name="date">Date:</string>
     <string name="dirigentes">Dirigentes</string>
-    <string name="escuteiro">Escuteiro</string>
     <string name="escoteiros">Escoteiros</string>
     <string name="criar">Criar</string>
+
+
+    <string name="numero_de_telemovel">Numero de telemovel</string>
+    <string name="data_de_nascimento">Data de nascimento</string>
+    <string name="nome_staff">Nome Dirigente</string>
+
+    <string name="data_de_ade_o">Data de adeção:</string>
+    <string name="creation_date">Creation date</string>
+    <string name="nome_scout">Nome Escoteiro</string>
+    <string name="criar_scout">Criar Escoteiro</string>
+
+    <string name="novo_staff">Novo Dirigente</string>
+    <string name="criar_staff">Criar Dirigente</string>
+    <string name="novo_scout">Novo Escoteiro</string>
+    <string name="dirigente">Dirigente</string>
+    <string name="atividades">Atividades</string>
 </resources>

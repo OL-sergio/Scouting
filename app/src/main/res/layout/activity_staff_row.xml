@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/staffInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A60018EE"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#660018EE"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:id="@+id/textViewStaffName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nome_staff"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColorHint="#FBFBFB"
+                    android:textColor="#FBFBFB"
+                    />
+                <TextView
+                    android:id="@+id/textViewStaffBirthdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/data_de_nascimento"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColorHint="#FBFBFB"
+                    android:textColor="#FBFBFB"
+                    />
+                <TextView
+                    android:id="@+id/textViewStaffPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/numero_de_telemovel"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColorHint="#FBFBFB"
+                    android:textColor="#FBFBFB"
+                    />
+                <TextView
+                    android:id="@+id/textViewStaffEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/email"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColorHint="#FBFBFB"
+                    android:textColor="#FBFBFB"
+                    />
+                <TextView
+                    android:id="@+id/textViewStaffCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pa_s"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColorHint="#FBFBFB"
+                    android:textColor="#FBFBFB"
+                    />
+
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textColor="#FBFBFB"
+                    android:text="@string/data_de_ade_o"
+                    />
+                <TextView
+                    android:id="@+id/textViewStaffCreationDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="@string/creation_date"
+                    android:textColorHint="#FBFBFB"
+                    android:textColor="#FBFBFB"
+
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

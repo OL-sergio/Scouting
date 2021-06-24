@@ -1,12 +1,10 @@
-package ipca.am.scounting.models
+package ipca.am.scouting.models
 
 import android.location.Address
 import org.json.JSONObject
 import java.util.*
 
 class ActivitiesModel {
-
-
 
     var activitiesName: String? = null
     var activitiesStartDate: String? = null
@@ -15,13 +13,14 @@ class ActivitiesModel {
     var activitiesCountry: String? = null
     var activitiesEmail: String? = null
     var activitiesPhone: String? = null
+    var activitiesCreationDate : String?= null
+
 
     companion object {
 
         fun parseJSON (jsonArticle : JSONObject) : ActivitiesModel {
 
             val activities = ActivitiesModel()
-
 
             activities.activitiesName    = jsonArticle.getString("NAME")
             activities.activitiesStartDate = jsonArticle.getString("START_DATE")
@@ -30,6 +29,7 @@ class ActivitiesModel {
             activities.activitiesCountry = jsonArticle.getString("COUNTRY")
             activities.activitiesEmail   = jsonArticle.getString("EMAIL")
             activities.activitiesPhone   = jsonArticle.getString("PHONE")
+            activities.activitiesCreationDate    = jsonArticle.getString("CREATION_DATE")
 
             return activities
         }

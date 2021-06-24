@@ -1,33 +1,33 @@
-package ipca.am.scounting.main
+package ipca.am.scouting.main
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import ipca.am.scounting.R
-import ipca.am.scounting.helpers.VolleyHelper
-import ipca.am.scounting.login.LoginActivity
+import androidx.annotation.RequiresApi
+import ipca.am.scouting.R
+import ipca.am.scouting.helpers.VolleyHelper
 import kotlinx.android.synthetic.main.activity_activities_row.*
 import kotlinx.android.synthetic.main.activity_create_activities.*
+import java.util.*
 
 
 class CreateActivitiesActivity : AppCompatActivity() {
 
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_activities)
 
-     /*  val bundle = intent.extras
-        bundle?.let {
-
-            idActivities = it.getInt("idACTIVITIES")
-
-        }*/
-
-
+        btn_BackDetailActivities.setOnClickListener{
+            val intent = Intent(this, ActivitiesDetailActivity::class.java)
+            startActivity(intent)
+        }
 
         btn_CreateNewActivities.setOnClickListener {
 
@@ -50,6 +50,7 @@ class CreateActivitiesActivity : AppCompatActivity() {
                 val activitiesCountry = findViewById<EditText>(R.id.edtTex_addActivitiesCountry)
                 val activitiesEmail = findViewById<EditText>(R.id.edtTex_addActivitiesEmail)
                 val activitiesPhone = findViewById<EditText>(R.id.edtTex_addActivitiesPhone)
+                val activitiesCreationDate = Date()
 
 
 
@@ -63,13 +64,15 @@ class CreateActivitiesActivity : AppCompatActivity() {
                     activitiesCity.text.toString(),
                     activitiesCountry.text.toString(),
                     activitiesEmail.text.toString(),
-                    activitiesPhone.text.toString()) { response ->
+                    activitiesPhone.text.toString(),
+                    activitiesCreationDate ) { response ->
 
                     if (response) {
 
                         Toast.makeText(applicationContext,getString(R.string.activities_created), Toast.LENGTH_SHORT).show()
 
                         val intent = Intent(this, ActivitiesDetailActivity::class.java)
+
                         startActivity(intent)
                     }
 
@@ -83,24 +86,6 @@ class CreateActivitiesActivity : AppCompatActivity() {
 
                 }
             }
-        }
-        findViewById<TextView>(R.id.txtView_GoToCreateActivities).setOnClickListener {
-
-            val intent = Intent(this, CreateActivitiesActivity::class.java)
-            startActivity(intent)
-        }
-
-        findViewById<TextView>(R.id.txtView_GoToScounting).setOnClickListener {
-
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
-
-        findViewById<TextView>(R.id.txtView_GoToStaff).setOnClickListener {
-
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-
         }
     }
 }

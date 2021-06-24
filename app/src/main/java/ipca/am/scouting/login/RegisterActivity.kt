@@ -1,17 +1,21 @@
-package ipca.am.scounting.login
+package ipca.am.scouting.login
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import ipca.am.scounting.R
-import ipca.am.scounting.R.string.registry_confirmed
-import ipca.am.scounting.helpers.VolleyHelper
+import androidx.annotation.RequiresApi
+import ipca.am.scouting.R
+import ipca.am.scouting.R.string.registry_confirmed
+import ipca.am.scouting.helpers.VolleyHelper
 import kotlinx.android.synthetic.main.activity_register.*
+import java.time.LocalDate
 
 class RegisterActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -35,6 +39,8 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun registerUer() {
 
         val username : String = edtTex_RegisterUsername.text.toString()
@@ -42,6 +48,8 @@ class RegisterActivity : AppCompatActivity() {
         val password : String = edtTex_RegisterPassword.text.toString()
         val birthdate : String = edtTex_RegisterBirthdate.text.toString()
         val nationality : String = edtTex_RegisterNationality.text.toString()
+        val creationDate = LocalDate.now()
+
 
         if (username == ""){
             Toast.makeText(this@RegisterActivity, "Please write username.", Toast.LENGTH_SHORT).show()
@@ -65,7 +73,7 @@ class RegisterActivity : AppCompatActivity() {
                 this@RegisterActivity,
                 username, password,
                 email, birthdate,
-                nationality ) {
+                nationality, creationDate   ) {
 
                 if (it) {
 

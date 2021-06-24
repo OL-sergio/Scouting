@@ -1,4 +1,4 @@
-package ipca.am.scounting
+package ipca.am.scouting
 
 import org.junit.Test
 

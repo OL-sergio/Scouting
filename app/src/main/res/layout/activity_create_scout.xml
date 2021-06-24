@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.CreateScout">
+
+    <TextView
+        android:id="@+id/textViewNewScout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/novo_scout"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#0729E4"
+        />
+
+    <EditText
+        android:id="@+id/editTextRegisterName"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="@string/nome"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNewScout"
+        android:textColorHint="#0729E4"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextRegisterBirthdate"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="@string/data_de_nascimento"
+        android:singleLine="true"
+        android:inputType="datetime"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterName"
+        android:textColorHint="#0729E4"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextRegisterEmail"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterBirthdate"
+        android:textColorHint="#0729E4"
+
+        />
+    <EditText
+        android:id="@+id/editTextRegisterPhone"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="@string/numero_de_telemovel"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterEmail"
+        android:textColorHint="#0729E4"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextRegisterCountry"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"
+        android:hint="@string/pa_s"
+        android:singleLine="true"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterPhone"
+        android:textColorHint="#0729E4"
+
+        />
+    <LinearLayout
+        android:id="@+id/listViewLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterCountry">
+
+        <Button
+            android:id="@+id/btn_BackDetailScout"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
+            android:text="@string/voltar"
+            android:textColor="#FAFAFA"
+            android:textSize="18sp"
+            android:background="@drawable/ic_shape_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRegisterCountry" />
+
+        <Button
+            android:id="@+id/btn_CreateScout"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
+            android:text="@string/criar"
+            android:textColor="#FAFAFA"
+            android:textSize="18sp"
+            android:background="@drawable/ic_shape_button_mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRegisterCountry" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
