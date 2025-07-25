@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Screenshots with sensitive information
+screenshots/*_sensitive.*
+
+# Temporary documentation files
+/tmp/
+*.tmp
